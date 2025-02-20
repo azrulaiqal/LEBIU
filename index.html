@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prank Website</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    img {
+      width: 300px; /* Fixed width */
+      height: 300px; /* Fixed height */
+      margin: 10px 0;
+      border-radius: 10px; /* Optional: Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+      animation: moveEffect 5s infinite ease-in-out; /* Move effect */
+    }
+    video {
+      width: 300px; /* Fixed width */
+      height: 300px; /* Fixed height */
+      margin: 10px 0;
+      border-radius: 10px; /* Optional: Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+    }
+    .note {
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Move effect animation */
+    @keyframes moveEffect {
+      0%, 100% {
+        transform: translateX(0) translateY(0);
+      }
+      25% {
+        transform: translateX(20px) translateY(-20px);
+      }
+      50% {
+        transform: translateX(-20px) translateY(20px);
+      }
+      75% {
+        transform: translateX(20px) translateY(20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>hai sayanggg! 😘</h1>
+  <button id="prankButton">TEKAN SINI!</button>
+
+  <div id="content" style="display: none;">
+    <h2>okay okay meh sembang sini 😊</h2>
+    <!-- Replace with your .jpg file -->
+    <img src="ira 5.jpg" alt="Photo 1">
+    <p class="note">CANTIKNYAA SAYANG SAYAAAA. 😍</p>
+    <!-- Replace with your .jpg file -->
+    <img src="/ira 6.jpg" alt="Photo 2">
+    <p class="note">INI LAGIIII CANTIKKKK.😍😍😍 </p>
+    <!-- Replace with your .mp4 file -->
+    <video controls>
+      <source src="IRA 7.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="note">bebel pun cantikkk </p>
+    <button id="prankButton2">cer tekan sini pulak sayang TIGA KALI!</button>
+  </div>
+
+  <!-- Replace with your .mp3 file -->
+  <audio id="backgroundMusic" loop>
+    <source src="frog.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    let clickCount = 0;
+    const prankButton = document.getElementById('prankButton');
+    const content = document.getElementById('content');
+    const prankButton2 = document.getElementById('prankButton2');
+    const music = document.getElementById('backgroundMusic');
+
+    prankButton.addEventListener('click', () => {
+      // Play the background music when the button is clicked
+      if (music.paused) {
+        music.play();
+      }
+
+      clickCount++;
+      if (clickCount < 5) {
+        prankButton.style.transform = `translate(${Math.random() * 100}px, ${Math.random() * 100}px)`;
+      } else {
+        prankButton.style.display = 'none';
+        content.style.display = 'block';
+      }
+    });
+
+    let prank2Count = 0;
+    prankButton2.addEventListener('click', () => {
+      prank2Count++;
+      if (prank2Count < 3) {
+        alert("HAHAHAHAH TERKONO! 😂");
+      } else {
+        // Redirect to another website
+        window.location.href = "https://azrulaiqal.github.io/pujuk-1/"; // Replace with your desired URL
+      }
+    });
+  </script>
+</body>
+</html>
